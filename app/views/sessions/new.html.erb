@@ -1,0 +1,24 @@
+<h1>Sign In</h1>
+
+<% if flash.now[:errors] %>
+  <% flash.now[:errors].each do |msg| %>
+    <h4> <%= msg %></h4>
+  <% end %>
+<% end %>
+
+<form action="<%= session_url %>" method="post">
+
+  <label for="user_name">User Name
+    <input type="text" name="user[user_name]" value="">
+  </label>
+
+  <br>
+
+  <label for="password">Password
+    <input type="password" name="user[password]" value="">
+  </label>
+
+  <br>
+
+  <input type="submit"  value="Submit">
+</form>
